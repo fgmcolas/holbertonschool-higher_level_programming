@@ -5,5 +5,5 @@ if __name__ != "__main__":
     exit()
 
 for name in dir(hidden_4):
-    if not name.startswith("__"):
+    if name[:2] != "__":
         print(name)
