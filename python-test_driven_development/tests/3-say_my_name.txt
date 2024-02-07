@@ -3,7 +3,7 @@
 My name is Colas Chaussure
 
 >>> say_my_name("Colas")
-My name is Colas
+My name is Colas 
 
 >>> say_my_name(12, "Colas")
 Traceback (most recent call last):
