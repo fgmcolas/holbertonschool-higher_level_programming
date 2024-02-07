@@ -11,8 +11,7 @@ class Rectangle:
 
     number_of_instances = 0
 
-
-    def __init__ (self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Initialize a new Rectangle
 
         Args:
@@ -58,14 +57,14 @@ class Rectangle:
         """Return the perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return (0)
-        return ((self.__width *2) + (self.__height * 2))
+        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
         """Return the printable representation of the rectangle
 
         Represent the rectangle with the # character
         """
-        if self.__width == 0 or self.__height ==0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
 
         rectangle_rows = []
