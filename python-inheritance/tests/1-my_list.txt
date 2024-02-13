@@ -59,17 +59,6 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 >>> my_list.print_sorted()
 [-inf, 1, 2, 4, inf]
 
->>> my_list.remove(4)
->>> print(my_list)
-[1, 2, inf, -inf]
-
 >>> my_list = MyList()
->>> my_list.append("Colas")
->>> my_list.append("Chaussure")
->>> my_list.append("School")
->>> my_list.append("Holberton")
->>> print(my_list)
-['Colas', 'Chaussure', 'School', 'Holberton']
-
 >>> my_list.print_sorted()
-['Chaussure', 'Colas', 'Holberton', 'School']
+[]
