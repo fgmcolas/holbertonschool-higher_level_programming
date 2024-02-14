@@ -1,5 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
 
 >>> bg.integer_validator("my_int", 12)
 
