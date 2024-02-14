@@ -44,3 +44,7 @@ TypeError: BaseGeometry() takes no arguments
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> bg = BaseGeometry()
+>>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+<bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
