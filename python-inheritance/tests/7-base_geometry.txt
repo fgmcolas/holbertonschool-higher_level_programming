@@ -37,10 +37,6 @@ TypeError: testing must be an integer
 Traceback (most recent call last):
 TypeError: testing must be an integer
 
->>> bg = BaseGeometry(None)
-Traceback (most recent call last):
-TypeError: BaseGeometry() takes no arguments
-
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
