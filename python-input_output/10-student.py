@@ -27,7 +27,7 @@ class Student:
             attrs (list): (Optional) The attributes to represent
         """
         if isinstance(attrs, list) and all(isinstance(item, str)
-                                    for item in attrs):
+                                           for item in attrs):
             return {key: value for key,
-                        value in self.__dict__.items() if key in attrs}
+                    value in self.__dict__.items() if key in attrs}
         return self.__dict__
