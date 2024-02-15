@@ -27,10 +27,9 @@ class Student:
             attrs (list): (Optional) The attributes to represent
         """
         if isinstance(attrs, list) and all(isinstance(item, str)
-                                    for item in attrs):
+                                           for item in attrs):
             return {key: value for key,
-                        value in self.__dict__.items() if key in attrs}
-        return self.__dict__
+                    value in self.__dict__.items() if key in attrs}
 
     def reload_from_json(self, json):
         """Replace all attributes of the Student
