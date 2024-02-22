@@ -455,3 +455,11 @@ class TestSquareMethods(unittest.TestCase):
         with open(filename, 'r') as file:
             content = file.read()
             self.assertEqual(content, "[]")
+
+    def test_save_to_file_none(self):
+        """Test save_to_file method with None input"""
+        filename = "Square.json"
+        Square.save_to_file(None)
+        with open(filename, 'r') as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
