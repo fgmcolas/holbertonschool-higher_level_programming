@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module for test Rectangle class """
 import unittest
+import os
 from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
@@ -374,10 +375,9 @@ class TestRectangleMethods(unittest.TestCase):
             content = file.read()
             self.assertEqual(content, "[]")
 
-    def test_save_to_file_none(self):
-        """Test save_to_file method with None input"""
-        filename = "Rectangle.json"
+    def test_rectangle_save_to_file_none(self):
         Rectangle.save_to_file(None)
-        with open(filename, 'r') as file:
-            content = file.read()
-            self.assertEqual(content, "[]")
+        self.assertTrue(os.path.exists(self.filename))
+        with open(self.filename, 'r') as file:
+            file_read = file.read()
+            self.assertEqual(file_read, "[]")
