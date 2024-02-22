@@ -1,74 +1,50 @@
 #!/usr/bin/python3
-"""
-Module that contains class Square,
-inheritance of class Rectangle
-"""
+"""Module for the square class"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Class Rectangle"""
+    """Represents a square, inheriting from Rectangle."""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initializes instances"""
+        """Initialize a new Square instance."""
         super().__init__(size, size, x, y, id)
-
-    def __str__(self):
-        """str special method"""
-        str_square = "[Square] "
-        str_id = "({}) ".format(self.id)
-        str_xy = "{}/{} - ".format(self.x, self.y)
-        str_wh = "{}/{}".format(self.width, self.height)
-
-        return str_square + str_id + str_xy + str_wh
 
     @property
     def size(self):
-        """Getter property"""
+        """int: The size of the square's sides."""
         return self.width
 
     @size.setter
     def size(self, value):
-        """Setter size"""
+        """Set square size, adjusting width and height."""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """str special method"""
-        str_rectangle = "[Square] "
-        str_id = "({}) ".format(self.id)
-        str_xy = "{}/{} - ".format(self.x, self.y)
-        str_size = "{}".format(self.size)
-
-        return str_rectangle + str_id + str_xy + str_size
+        """Return string representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y, self.size)
 
     def update(self, *args, **kwargs):
-        """update method"""
-        if args is not None and len(args) != 0:
-            list_atr = ['id', 'size', 'x', 'y']
-            for i in range(len(args)):
-                if list_atr[i] == 'size':
-                    setattr(self, 'width', args[i])
-                    setattr(self, 'height', args[i])
-                else:
-                    setattr(self, list_atr[i], args[i])
-        else:
+        """Update Square attributes via args or kwargs.
+        Attributes order: id, size, x, y.
+        """
+        attributes = ['id', 'size', 'x', 'y']
+        if args and len(args) > 0:
+            attributes_with_value = list(zip(attributes, args))
+            for attr, arg in attributes_with_value:
+                setattr(self, attr, arg)
+        elif kwargs:
             for key, value in kwargs.items():
-                if key == 'size':
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
-                else:
+                if key in attributes:
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """Returns a dictionary with attributes"""
-        list_atr = ['id', 'size', 'x', 'y']
-        dict_res = {}
-
-        for key in list_atr:
-            if key == 'size':
-                dict_res[key] = getattr(self, 'width')
-            else:
-                dict_res[key] = getattr(self, key)
-
-        return dict_res
+        """Return dictionary representation of a Square."""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
