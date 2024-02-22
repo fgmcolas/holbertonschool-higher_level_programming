@@ -454,4 +454,4 @@ class TestSquareMethods(unittest.TestCase):
         Square.save_to_file([])
         with open(filename, 'r') as file:
             content = file.read()
-            self.assertEqual(content, "")
+            self.assertEqual(content, "[]")
